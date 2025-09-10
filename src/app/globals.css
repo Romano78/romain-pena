@@ -20,6 +20,9 @@
   @media (min-width: 1440px) {
     max-width: 1600px;
     margin: 0 auto;
+  }
+
+  @media (min-width: 1600px) {
     padding-left: 0;
     padding-right: 0;
   }
@@ -45,4 +48,60 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Using Tailwind classes directly in the component instead of @apply */
+.loadingOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--foreground);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.loading_wrapper {
+  animation: leaftUp 0.3s ease-out;
+}
+
+/* Custom keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes leaftUp {
+  from { transform: translateY(0%); }
+  to { transform: translateY(-100%); }
+}
+
+/* Example of a custom animation class */
+.loadingPulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+
+.nav__wrapper {
+  position: fixed;
+  top: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 90;
+  background-color: var(--background);
+  width: fit-content;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: top 0.3s ease-in-out, right 0.3s ease-in-out;
 }
