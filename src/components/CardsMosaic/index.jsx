@@ -1,6 +1,6 @@
 // CardsMosaic.jsx
 import PropTypes from 'prop-types';
-import ProjectCard from '@/components/ProjectCard';
+import ProjectCard from '@/elements/ProjectCard';
 import { cn } from '@/lib/utils';
 
 /**

@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #F8F6F2;
   --foreground: #171717;
 }
 
@@ -57,49 +57,29 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 50;
+  z-index: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--foreground);
-  animation: fadeIn 0.3s ease-out;
+  background-color: var(--background);
+}
+
+button {
+  position: relative;
+  z-index: 999;
 }
 
 .loading_wrapper {
   animation: leaftUp 0.3s ease-out;
 }
 
-/* Custom keyframes */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes leaftUp {
-  from { transform: translateY(0%); }
-  to { transform: translateY(-100%); }
-}
-
-/* Example of a custom animation class */
-.loadingPulse {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
-}
-
-
 .nav__wrapper {
   position: fixed;
-  top: 1%;
-  left: 50%;
-  transform: translateX(-50%);
+  /* top: 1.5rem; */
   z-index: 90;
-  background-color: var(--background);
+  background-color: var(--foreground);
+  color: var(--background);
   width: fit-content;
-  padding: 1rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   cursor: pointer;
